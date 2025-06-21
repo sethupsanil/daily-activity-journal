@@ -1,4 +1,4 @@
-import admin from "../config/firebaseConfig.js";
+import admin from "../../config/firebaseConfig.js";
 
 const authMiddleware = async (req, res, next) => {
   const token = req.headers.authorization?.split("Bearer ")[1];
@@ -7,6 +7,10 @@ const authMiddleware = async (req, res, next) => {
   try {
     const decodedToken = await admin.auth().verifyIdToken(token);
     req.user = decodedToken;
+    req.user = {
+      userId: decodedToken.user_id,
+      ...decodedToken,
+    };
     next();
   } catch (error) {
     res.error(error, 401);

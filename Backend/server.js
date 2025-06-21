@@ -4,7 +4,8 @@ import dotenv from "dotenv";
 import express from "express";
 
 import responseHandler from "./middleware/responseHandler.js";
-import router from "./router/routes.js";
+import router from "./router/main.routes.js";
+import { refreshIdToken } from "./utils/authTokenHelper.util.js";
 
 dotenv.config();
 
@@ -28,3 +29,8 @@ app.get("/", (req, res) => {
 
 // API routes
 app.use("/api", router);
+
+app.get("/refresh", async (req, res) => {
+  const token = await refreshIdToken();
+  res.send(token);
+});
