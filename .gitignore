@@ -138,6 +138,9 @@ dist
 
 # Backend
 Backend/node_modules
+# Ignore Firebase service account credentials
+Backend/config/firebaseServiceAccount.json
+
 
 # Frontend
 Frontend/web/node_modules
