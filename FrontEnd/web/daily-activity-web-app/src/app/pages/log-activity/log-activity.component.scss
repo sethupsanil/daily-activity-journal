@@ -1,0 +1,30 @@
+.log-activity-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  
+    mat-card {
+      width: 100%;
+      max-width: 500px;
+      padding: 2rem;
+      border-radius: 16px;
+  
+      mat-card-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+  
+      .full-width {
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+  
+      .submit-button {
+        width: 100%;
+        font-weight: 600;
+      }
+    }
+  }
+  

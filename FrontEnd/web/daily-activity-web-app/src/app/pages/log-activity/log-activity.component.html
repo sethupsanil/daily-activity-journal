@@ -1,0 +1,41 @@
+<div class="log-activity-wrapper">
+  <mat-card>
+    <mat-card-title>Add Activity</mat-card-title>
+
+    <form [formGroup]="logForm" (ngSubmit)="submitActivity()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>What did you do or how are you feeling?</mat-label>
+        <textarea
+          matInput
+          rows="4"
+          formControlName="text"
+          placeholder="E.g., Had a coffee and read a book"
+        ></textarea>
+        @if(logForm.get('text')?.hasError('required')){
+        <mat-error>
+          Activity text is required
+        </mat-error>
+      }
+      @if(logForm.get('text')?.hasError('minlength')){
+        <mat-error>
+          Activity text must be at least 3 characters long
+        </mat-error>
+      }
+      @if(logForm.get('text')?.hasError('maxlength')){
+        <mat-error>
+          Activity text must be less than 100 characters long
+        </mat-error>
+      }
+      </mat-form-field>
+
+      <button
+        mat-flat-button
+        color="primary"
+        class="submit-button"
+        [disabled]="logForm.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </mat-card>
+</div>

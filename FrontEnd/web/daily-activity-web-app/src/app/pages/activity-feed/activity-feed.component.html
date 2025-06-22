@@ -1,0 +1,47 @@
+<div class="feed-container">
+  <div class="feed-header">
+    <h1>Activity Feed</h1>
+    
+    <a class="logout-link" (click)="onLogout()">Logout</a>
+  </div>
+  <button mat-flat-button color="primary" class="add-activity-button" (click)="onAdd()">Add Activity</button>
+  <!-- Search -->
+  <mat-form-field class="search-box" appearance="outline">
+    <mat-label>Search Activities</mat-label>
+    <input matInput [(ngModel)]="search" class="search-input"  placeholder="e.g. relaxing, meeting, etc.">
+    <mat-icon matSuffix (click)="fetchActivities()">search</mat-icon>
+  </mat-form-field>
+
+  <!-- Activity Cards -->
+   @for (activity of activities; track $index) {
+    <div  class="activity-card">
+      <mat-card>
+        <mat-card-subtitle>{{ activity.createdAt | timeago }}</mat-card-subtitle>
+        <mat-card-title>{{ activity.text }}</mat-card-title>
+  
+        <mat-card-content class="tag-section">
+          <mat-chip-set >
+            <mat-chip color="accent" selected>{{ activity.mood }}</mat-chip>
+            @for (tag of activity.tags; track $index) {
+              <mat-chip
+             
+              color="primary"
+              selected
+              class="tag-chip"
+            >
+              {{ tag }}
+            </mat-chip>
+            }
+            
+          </mat-chip-set>
+        </mat-card-content>
+      </mat-card>
+    </div>
+   }
+  
+
+  <!-- Load More -->
+  <div class="load-more">
+    <button mat-flat-button color="primary" (click)="loadMore()">Load More</button>
+  </div>
+</div>

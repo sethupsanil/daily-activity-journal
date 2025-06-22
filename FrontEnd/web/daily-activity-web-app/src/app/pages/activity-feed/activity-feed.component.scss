@@ -1,0 +1,70 @@
+.feed-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 16px;
+  }
+  
+  .feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logout-link {
+    font-size: 14px;
+    color: #1a237e;
+    cursor: pointer;
+  }
+  
+  .search-box {
+    width: 100%;
+    margin: 16px 0;
+  }
+  
+  .activity-card {
+    margin-bottom: 16px;
+  }
+  
+  .tag-section {
+    margin-top: 12px;
+  }
+  
+  .load-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  mat-card-subtitle{
+    font-size: 10px;
+    color: #ccc;
+    
+  }
+
+  mat-card{
+    padding: 5px;
+    border-color: #808080;
+  }
+  mat-card-title{
+    font-size: 16px;
+    color: #000;
+    text-transform: capitalize;
+  }
+  mat-card-content{
+    padding: 0px;
+  }
+  .mat-mdc-standard-chip {
+    --mdc-chip-label-text-size: 10px;
+  }
+
+  mat-chip{
+    height: 20px;
+  }
+
+  .add-activity-button{
+    border-radius: 8px;
+    height: 30px;
+  }
+  .search-input{
+    background-color: #fff;
+  }
