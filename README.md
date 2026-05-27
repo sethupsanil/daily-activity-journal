@@ -1,4 +1,4 @@
-# 📝 Daily Activity Journal (test2)
+# 📝 Daily Activity Journal (test3)
 
 The **Daily Activity Journal** is a modern web application built with **Angular 18** and **Firebase** that enables users to log their daily activities or moods. It uses OpenAI to intelligently tag and categorize entries by mood and keywords.
 
